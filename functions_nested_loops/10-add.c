@@ -1,13 +1,16 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * add - adds two integers and returns the result
+ * @a: int to be added to b
+ * @b: int to be added to a
+ * Return: sum of a and b
  */
-int _putchar(char c)
+int add(int i, int j)
 {
-	return (write(1, &c, 1));
+	int k;
+
+	k = i + j;
+
+	return (k);
 }
