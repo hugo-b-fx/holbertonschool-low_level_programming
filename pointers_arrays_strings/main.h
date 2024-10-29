@@ -5,3 +5,4 @@ void _puts(char *str);
 void print_rev(char *str);
 int _putchar(char);
 void rev_string(char *s);
+void puts2(char *str);
