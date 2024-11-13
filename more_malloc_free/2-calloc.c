@@ -1,26 +1,30 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * _calloc - point
- * @nmemb: number of size
- * @size: size of calloc
- * Return: Always 1 (True) or 0 (False)
+ * *_calloc - function to allocates memory
+ * @nmemb: unsigned int type
+ * @size: unsigned int type
+ * Return: return pointer to array
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *cal;
+	char *ptr;
+	unsigned int count;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-
-	cal = calloc(nmemb, size);
-
-	if (cal == 0)
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
 	{
-		free(cal);
 		return (NULL);
 	}
-	return (cal);
-
+	count = 0;
+	while (count < nmemb * size)
+	{
+		ptr[count] = 0;
+		count++;
+	}
+	return (ptr);
 }
