@@ -1,32 +1,36 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 /**
- * array_range - point
- * @min: minimum of number
- * @max: maximum of number
- * Return: Always 1 (True) or 0 (False)
+ * *array_range - make  memory for an array
+ * @min: int type
+ * @max: int type
+ * Return:  return pointer to array
  */
+
 int *array_range(int min, int max)
 {
-	int *mal;
-	int index = 0;
-	int seek = min;
+	int *ptr;
+	int arr;
 
 	if (min > max)
-		return (NULL);
-
-	mal = calloc((max - min) + 1, sizeof(int));
-
-	if (mal == 0)
 	{
-		free(mal);
 		return (NULL);
 	}
-	for (; seek <= max; seek++)
+
+	ptr = malloc(sizeof(int) * (max - min + 1));
+	if (ptr == NULL)
 	{
-		mal[index] = seek;
-		index++;
+		return (NULL);
 	}
-	return (mal);
+	arr = 0;
+	while (min <= max)
+	{
+		ptr[arr] = min;
+		min++;
+		arr++;
+	}
+	return (ptr);
 }
