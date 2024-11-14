@@ -13,15 +13,13 @@
 void *malloc_checked(unsigned int b)
 {
 
-	int *allocated_memory = NULL;
+	void *ptr =malloc(b)L;
 
-	allocated_memory = malloc(b);
-
-	if (allocated_memory == NULL)
+	if (ptr == NULL)
 	{
 		exit(98);
 	}
 
-	return (allocated_memory);
+	return (ptr);
 
 }
