@@ -4,11 +4,11 @@
 #include "dog.h"
 
 /**
- *  * free_dog - function that frees dogs
- *   *
- *    * @d: pointer to dog_t struct
- *     *
- *      */
+ * free_dog - function that frees dogs
+ *
+ * @d: pointer to dog_t struct
+ *
+ */
 
 void free_dog(dog_t *d)
 {
