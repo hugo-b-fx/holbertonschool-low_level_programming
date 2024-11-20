@@ -10,9 +10,14 @@ void _printstr(va_list list);
 void _printfloat(va_list list);
 void _printint(va_list list);
 
-typedef struct checker
+/**
+ * struct format_types - Struct format_types
+ * @identifier: The conversion specifier
+ * @f: The function pointer
+ */
+typedef struct format_types
 {
-	char *type;
-	void (*f)();
-} checker;
+	char *identifier;
+	void (*f)(char *separator, va_list args);
+} f_dt;
 #endif
