@@ -30,22 +30,22 @@ void _cp(char *f_from, char *f_to)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_to);
 			exit(99);
 		}
-		}
-		if (text_copy == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_from);
-			exit(98);
-		}
-		if (close(file_from) == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_from);
-			exit(100);
-		}
-		if (close(file_to) == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_to);
-			exit(100);
-		}
+	}
+	if (text_copy == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_from);
+		exit(98);
+	}
+	if (close(file_from) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_from);
+		exit(100);
+	}
+	if (close(file_to) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", file_to);
+		exit(100);
+	}
 }
 
 /**
