@@ -47,3 +47,20 @@ void _cp(char *f_from, char *f_to)
 			exit(100);
 		}
 }
+
+/**
+ * main - call the function _cp
+ * @argc: numbr of arguments
+ * @argv: list of arguments
+ * Return: 0
+ */
+int main(int argc, char *argv[])
+{
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+	_cp(argv[1], argv[2]);
+	return (0);
+}
