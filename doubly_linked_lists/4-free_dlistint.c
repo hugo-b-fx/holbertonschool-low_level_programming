@@ -14,7 +14,7 @@ void free_dlistint(dlistint_t *head)
 
 	while (head)
 	{
-		palace = head->next;
+		jsp = head->next;
 		free(head);
 		head = jsp;
 	}
